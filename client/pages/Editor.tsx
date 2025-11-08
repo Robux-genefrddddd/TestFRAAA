@@ -162,7 +162,7 @@ export default function Editor() {
 
   const addSection = (type: keyof typeof SECTION_TEMPLATES) => {
     const newSection: Section = {
-      id: Math.random().toString(36),
+      id: `${type}-${Date.now()}-${Math.random()}`,
       ...SECTION_TEMPLATES[type],
     };
     setPortfolio((prev) => ({
