@@ -64,7 +64,12 @@ export default function Index() {
 
   const handleStartCreating = (presetId: string) => {
     setSelectedPreset(presetId);
-    setShowEditor(true);
+    localStorage.setItem("cosmosport-preset", presetId);
+    if (user) {
+      navigate("/build");
+    } else {
+      navigate("/register");
+    }
   };
 
   const handleBeginButton = () => {
