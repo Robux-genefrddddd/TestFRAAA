@@ -50,9 +50,7 @@ export default function Login() {
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium mb-2">
-                Email
-              </label>
+              <label className="block text-sm font-medium mb-2">Email</label>
               <input
                 type="email"
                 value={email}
@@ -64,15 +62,13 @@ export default function Login() {
                   "border border-white/10 bg-white/5",
                   "focus:bg-white/10 focus:border-primary/50",
                   "placeholder:text-muted-foreground",
-                  "transition-colors outline-none"
+                  "transition-colors outline-none",
                 )}
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">
-                Password
-              </label>
+              <label className="block text-sm font-medium mb-2">Password</label>
               <input
                 type="password"
                 value={password}
@@ -84,7 +80,7 @@ export default function Login() {
                   "border border-white/10 bg-white/5",
                   "focus:bg-white/10 focus:border-primary/50",
                   "placeholder:text-muted-foreground",
-                  "transition-colors outline-none"
+                  "transition-colors outline-none",
                 )}
               />
             </div>
@@ -99,7 +95,7 @@ export default function Login() {
                 "hover:from-primary/20 hover:to-secondary/20",
                 "transition-all duration-300",
                 "flex items-center justify-center gap-2",
-                "disabled:opacity-50 disabled:cursor-not-allowed"
+                "disabled:opacity-50 disabled:cursor-not-allowed",
               )}
             >
               {loading ? (

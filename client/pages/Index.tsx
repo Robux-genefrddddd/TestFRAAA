@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ArrowRight, Zap, Palette, Code2, Sparkles, LogOut } from "lucide-react";
+import {
+  ArrowRight,
+  Zap,
+  Palette,
+  Code2,
+  Sparkles,
+  LogOut,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/context/AuthContext";
 
@@ -119,10 +126,15 @@ export default function Index() {
               Editor Coming Soon
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              You selected the <span className="text-primary font-semibold">{selectedPreset}</span> preset.
+              You selected the{" "}
+              <span className="text-primary font-semibold">
+                {selectedPreset}
+              </span>{" "}
+              preset.
             </p>
             <p className="text-muted-foreground mb-8">
-              The full WYSIWYG editor with inline editing, preset customization, and Firebase integration is being built.
+              The full WYSIWYG editor with inline editing, preset customization,
+              and Firebase integration is being built.
             </p>
             <button
               onClick={() => setShowEditor(false)}
@@ -163,7 +175,7 @@ export default function Index() {
                         "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium",
                         "border border-white/15 hover:border-white/30",
                         "bg-white/5 hover:bg-white/10",
-                        "transition-all"
+                        "transition-all",
                       )}
                     >
                       <LogOut className="w-4 h-4" />
@@ -177,7 +189,7 @@ export default function Index() {
                       className={cn(
                         "px-4 py-2 rounded-lg text-sm font-medium",
                         "text-muted-foreground hover:text-foreground",
-                        "transition-colors"
+                        "transition-colors",
                       )}
                     >
                       Sign In
@@ -189,7 +201,7 @@ export default function Index() {
                         "border border-white/15 hover:border-white/30",
                         "bg-gradient-to-r from-primary/10 to-secondary/10",
                         "hover:from-primary/20 hover:to-secondary/20",
-                        "transition-all"
+                        "transition-all",
                       )}
                     >
                       Sign Up
@@ -219,8 +231,9 @@ export default function Index() {
             </h2>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-              Sans compte. Sans code. Sans limites. Crée ton portfolio en quelques minutes, 
-              personnalise-le, et partage-le au monde. Tout ça, instantanément.
+              Sans compte. Sans code. Sans limites. Crée ton portfolio en
+              quelques minutes, personnalise-le, et partage-le au monde. Tout
+              ça, instantanément.
             </p>
 
             <button
@@ -232,7 +245,7 @@ export default function Index() {
                 "hover:from-primary/20 hover:to-secondary/20",
                 "transition-all duration-300",
                 "group font-grotesk font-semibold text-lg",
-                "glow-button hover:glow-pulse"
+                "glow-button hover:glow-pulse",
               )}
             >
               {user ? "Aller à l'éditeur" : "Commencer"}
@@ -244,7 +257,9 @@ export default function Index() {
         {/* Presets Section */}
         <section className="container mx-auto px-4 py-20">
           <div className="text-center mb-16">
-            <h3 className="text-4xl font-grotesk font-bold mb-4">Choisis ton style</h3>
+            <h3 className="text-4xl font-grotesk font-bold mb-4">
+              Choisis ton style
+            </h3>
             <p className="text-muted-foreground text-lg">
               Commence avec un preset, puis personnalise chaque détail
             </p>
@@ -259,7 +274,7 @@ export default function Index() {
                   "p-6 rounded-xl border transition-all duration-300 cursor-pointer text-left w-full",
                   "hover:border-white/30 hover:bg-white/5",
                   "group",
-                  "border-white/10 bg-white/[0.02]"
+                  "border-white/10 bg-white/[0.02]",
                 )}
               >
                 <div className="flex items-start justify-between mb-4">
@@ -271,8 +286,12 @@ export default function Index() {
                   </span>
                 </div>
 
-                <h4 className="text-xl font-grotesk font-bold mb-2">{preset.name}</h4>
-                <p className="text-muted-foreground text-sm mb-6">{preset.description}</p>
+                <h4 className="text-xl font-grotesk font-bold mb-2">
+                  {preset.name}
+                </h4>
+                <p className="text-muted-foreground text-sm mb-6">
+                  {preset.description}
+                </p>
 
                 <div className="flex items-center gap-2">
                   <div className="flex -space-x-2">
@@ -298,25 +317,34 @@ export default function Index() {
           <div className="grid md:grid-cols-3 gap-12">
             <div className="text-center">
               <div className="mb-4 text-4xl">✨</div>
-              <h4 className="text-xl font-grotesk font-bold mb-3">Edition en direct</h4>
+              <h4 className="text-xl font-grotesk font-bold mb-3">
+                Edition en direct
+              </h4>
               <p className="text-muted-foreground">
-                Modifie ton contenu en temps réel. Chaque changement s'affiche instantanément.
+                Modifie ton contenu en temps réel. Chaque changement s'affiche
+                instantanément.
               </p>
             </div>
 
             <div className="text-center">
               <div className="mb-4 text-4xl">🚀</div>
-              <h4 className="text-xl font-grotesk font-bold mb-3">Publication instantanée</h4>
+              <h4 className="text-xl font-grotesk font-bold mb-3">
+                Publication instantanée
+              </h4>
               <p className="text-muted-foreground">
-                Clique sur « Publier » et ton portfolio est en ligne. Pas d'attente, pas de configuration.
+                Clique sur « Publier » et ton portfolio est en ligne. Pas
+                d'attente, pas de configuration.
               </p>
             </div>
 
             <div className="text-center">
               <div className="mb-4 text-4xl">🌌</div>
-              <h4 className="text-xl font-grotesk font-bold mb-3">Lien direct</h4>
+              <h4 className="text-xl font-grotesk font-bold mb-3">
+                Lien direct
+              </h4>
               <p className="text-muted-foreground">
-                https://cosmosport.com/@tonnom — C'est tout ce dont tu as besoin.
+                https://cosmosport.com/@tonnom — C'est tout ce dont tu as
+                besoin.
               </p>
             </div>
           </div>

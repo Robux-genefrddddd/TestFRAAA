@@ -75,9 +75,12 @@ export default function Portfolio() {
     return (
       <div className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-grotesk font-bold mb-4">Portfolio Not Found</h1>
+          <h1 className="text-4xl font-grotesk font-bold mb-4">
+            Portfolio Not Found
+          </h1>
           <p className="text-muted-foreground mb-8">
-            The portfolio @{username} doesn't exist or hasn't been published yet.
+            The portfolio @{username} doesn't exist or hasn't been published
+            yet.
           </p>
           <Link
             to="/"
@@ -93,8 +96,8 @@ export default function Portfolio() {
 
   const fontFamilyMap: Record<string, string> = {
     "Space Grotesk": "font-grotesk",
-    "Inter": "font-sans",
-    "Poppins": "font-poppins",
+    Inter: "font-sans",
+    Poppins: "font-poppins",
   };
 
   return (
@@ -108,7 +111,10 @@ export default function Portfolio() {
       {/* Header with back link */}
       <header className="border-b border-white/10 backdrop-blur-sm sticky top-0 z-40">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-bold" style={{ color: portfolio.theme.primaryColor }}>
+          <h1
+            className="text-2xl font-bold"
+            style={{ color: portfolio.theme.primaryColor }}
+          >
             {portfolio.title}
           </h1>
           <Link

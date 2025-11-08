@@ -3,15 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { db } from "@/lib/firebase";
 import { doc, setDoc, getDoc } from "firebase/firestore";
-import {
-  Plus,
-  Save,
-  LogOut,
-  Eye,
-  Settings,
-  Trash2,
-  Copy,
-} from "lucide-react";
+import { Plus, Save, LogOut, Eye, Settings, Trash2, Copy } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface Section {
@@ -175,7 +167,7 @@ export default function Editor() {
     setPortfolio((prev) => ({
       ...prev,
       sections: prev.sections.map((s) =>
-        s.id === id ? { ...s, ...updates } : s
+        s.id === id ? { ...s, ...updates } : s,
       ),
     }));
   };
@@ -215,7 +207,7 @@ export default function Editor() {
                 "bg-gradient-to-r from-primary/10 to-secondary/10",
                 "hover:from-primary/20 hover:to-secondary/20",
                 "transition-all text-sm font-medium",
-                saving && "opacity-50"
+                saving && "opacity-50",
               )}
             >
               <Save className="w-4 h-4" />
@@ -228,7 +220,7 @@ export default function Editor() {
                 "flex items-center gap-2 px-4 py-2 rounded-lg",
                 "border border-white/15 hover:border-white/30",
                 "bg-white/5 hover:bg-white/10",
-                "transition-all text-sm font-medium"
+                "transition-all text-sm font-medium",
               )}
             >
               <Eye className="w-4 h-4" />
@@ -241,7 +233,7 @@ export default function Editor() {
                 "flex items-center gap-2 px-4 py-2 rounded-lg",
                 "border border-white/15 hover:border-white/30",
                 "bg-white/5 hover:bg-white/10",
-                "transition-all text-sm font-medium"
+                "transition-all text-sm font-medium",
               )}
             >
               <LogOut className="w-4 h-4" />
@@ -281,7 +273,7 @@ export default function Editor() {
                       "w-full px-3 py-2 rounded-lg",
                       "border border-white/10 bg-white/5",
                       "focus:bg-white/10 focus:border-primary/50",
-                      "text-sm outline-none transition-colors"
+                      "text-sm outline-none transition-colors",
                     )}
                   />
                 </div>
@@ -307,7 +299,7 @@ export default function Editor() {
                         "w-full pl-6 pr-3 py-2 rounded-lg",
                         "border border-white/10 bg-white/5",
                         "focus:bg-white/10 focus:border-primary/50",
-                        "text-sm outline-none transition-colors"
+                        "text-sm outline-none transition-colors",
                       )}
                     />
                   </div>
@@ -330,7 +322,7 @@ export default function Editor() {
                       "w-full px-3 py-2 rounded-lg",
                       "border border-white/10 bg-white/5",
                       "focus:bg-white/10 focus:border-primary/50",
-                      "text-sm outline-none transition-colors resize-none"
+                      "text-sm outline-none transition-colors resize-none",
                     )}
                   />
                 </div>
@@ -355,7 +347,7 @@ export default function Editor() {
                       "w-full px-4 py-2 rounded-lg text-sm font-medium",
                       "border border-white/15 hover:border-white/30",
                       "bg-white/5 hover:bg-white/10",
-                      "transition-all text-left capitalize"
+                      "transition-all text-left capitalize",
                     )}
                   >
                     + {type}
@@ -408,7 +400,7 @@ export default function Editor() {
                       "w-full px-3 py-2 rounded-lg",
                       "border border-white/10 bg-white/5",
                       "focus:bg-white/10 focus:border-primary/50",
-                      "text-sm outline-none transition-colors"
+                      "text-sm outline-none transition-colors",
                     )}
                   >
                     <option>Space Grotesk</option>
@@ -430,7 +422,7 @@ export default function Editor() {
                   "p-6 rounded-xl border transition-all cursor-pointer",
                   selectedSection === section.id
                     ? "border-primary bg-primary/10"
-                    : "border-white/10 bg-white/[0.02] hover:border-white/20"
+                    : "border-white/10 bg-white/[0.02] hover:border-white/20",
                 )}
               >
                 <div className="flex items-start justify-between mb-4">
@@ -470,7 +462,7 @@ export default function Editor() {
                           "w-full px-3 py-2 rounded-lg",
                           "border border-white/10 bg-white/5",
                           "focus:bg-white/10 focus:border-primary/50",
-                          "text-sm outline-none transition-colors"
+                          "text-sm outline-none transition-colors",
                         )}
                       />
                     </div>
@@ -489,7 +481,7 @@ export default function Editor() {
                           "w-full px-3 py-2 rounded-lg",
                           "border border-white/10 bg-white/5",
                           "focus:bg-white/10 focus:border-primary/50",
-                          "text-sm outline-none transition-colors resize-none"
+                          "text-sm outline-none transition-colors resize-none",
                         )}
                       />
                     </div>
@@ -510,7 +502,7 @@ export default function Editor() {
                             "w-full px-3 py-2 rounded-lg",
                             "border border-white/10 bg-white/5",
                             "focus:bg-white/10 focus:border-primary/50",
-                            "text-sm outline-none transition-colors"
+                            "text-sm outline-none transition-colors",
                           )}
                         />
                       </div>

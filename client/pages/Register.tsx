@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import {
-  createUserWithEmailAndPassword,
-  updateProfile,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { ArrowRight, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -25,7 +22,7 @@ export default function Register() {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
-        password
+        password,
       );
 
       if (displayName) {
@@ -55,7 +52,9 @@ export default function Register() {
 
         {/* Form Card */}
         <div className="p-8 rounded-xl border border-white/10 bg-white/[0.02] backdrop-blur-sm">
-          <h2 className="text-2xl font-grotesk font-bold mb-6">Create Account</h2>
+          <h2 className="text-2xl font-grotesk font-bold mb-6">
+            Create Account
+          </h2>
 
           {error && (
             <div className="mb-6 p-4 rounded-lg bg-destructive/10 border border-destructive/20 text-destructive text-sm">
@@ -78,15 +77,13 @@ export default function Register() {
                   "border border-white/10 bg-white/5",
                   "focus:bg-white/10 focus:border-primary/50",
                   "placeholder:text-muted-foreground",
-                  "transition-colors outline-none"
+                  "transition-colors outline-none",
                 )}
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">
-                Email
-              </label>
+              <label className="block text-sm font-medium mb-2">Email</label>
               <input
                 type="email"
                 value={email}
@@ -98,15 +95,13 @@ export default function Register() {
                   "border border-white/10 bg-white/5",
                   "focus:bg-white/10 focus:border-primary/50",
                   "placeholder:text-muted-foreground",
-                  "transition-colors outline-none"
+                  "transition-colors outline-none",
                 )}
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">
-                Password
-              </label>
+              <label className="block text-sm font-medium mb-2">Password</label>
               <input
                 type="password"
                 value={password}
@@ -119,7 +114,7 @@ export default function Register() {
                   "border border-white/10 bg-white/5",
                   "focus:bg-white/10 focus:border-primary/50",
                   "placeholder:text-muted-foreground",
-                  "transition-colors outline-none"
+                  "transition-colors outline-none",
                 )}
               />
             </div>
@@ -134,7 +129,7 @@ export default function Register() {
                 "hover:from-primary/20 hover:to-secondary/20",
                 "transition-all duration-300",
                 "flex items-center justify-center gap-2",
-                "disabled:opacity-50 disabled:cursor-not-allowed"
+                "disabled:opacity-50 disabled:cursor-not-allowed",
               )}
             >
               {loading ? (

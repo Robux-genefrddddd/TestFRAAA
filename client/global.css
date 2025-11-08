@@ -59,13 +59,23 @@
 
 /* Starfield animation for Galaxy theme */
 @keyframes twinkle {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.8; }
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @layer base {
@@ -85,7 +95,7 @@
 
   /* Starfield background effect */
   body::before {
-    content: '';
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
@@ -100,8 +110,24 @@
       radial-gradient(1px 1px at 30% 80%, white, rgba(255, 255, 255, 0.2)),
       radial-gradient(1px 1px at 70% 40%, white, rgba(255, 255, 255, 0.2)),
       radial-gradient(2px 2px at 10% 90%, white, rgba(255, 255, 255, 0.2));
-    background-size: 200% 200%, 300% 300%, 250% 250%, 350% 350%, 220% 220%, 280% 280%, 240% 240%, 320% 320%;
-    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    background-size:
+      200% 200%,
+      300% 300%,
+      250% 250%,
+      350% 350%,
+      220% 220%,
+      280% 280%,
+      240% 240%,
+      320% 320%;
+    background-position:
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%;
     pointer-events: none;
     z-index: 0;
     animation: float 20s ease-in-out infinite;
@@ -120,10 +146,14 @@
 
   /* Glow effect for accent elements */
   .glow {
-    text-shadow: 0 0 20px rgba(111, 195, 223, 0.6), 0 0 40px rgba(192, 167, 255, 0.4);
+    text-shadow:
+      0 0 20px rgba(111, 195, 223, 0.6),
+      0 0 40px rgba(192, 167, 255, 0.4);
   }
 
   .glow-button {
-    box-shadow: 0 0 20px rgba(111, 195, 223, 0.3), inset 0 0 20px rgba(111, 195, 223, 0.1);
+    box-shadow:
+      0 0 20px rgba(111, 195, 223, 0.3),
+      inset 0 0 20px rgba(111, 195, 223, 0.1);
   }
 }
