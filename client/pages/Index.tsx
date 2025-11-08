@@ -172,7 +172,7 @@ export default function Index() {
             </p>
 
             <button
-              onClick={() => setShowEditor(true)}
+              onClick={handleBeginButton}
               className={cn(
                 "inline-flex items-center gap-3 px-8 py-4 rounded-lg",
                 "border border-white/15 hover:border-white/30",
@@ -183,7 +183,7 @@ export default function Index() {
                 "glow-button hover:glow-pulse"
               )}
             >
-              Commencer
+              {user ? "Aller à l'éditeur" : "Commencer"}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
