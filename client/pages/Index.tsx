@@ -86,15 +86,25 @@ export default function Index() {
         {/* Header */}
         <header className="border-b border-white/10 backdrop-blur-sm sticky top-0 z-40">
           <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-            <h1 className="text-2xl font-grotesk font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              CosmosPort
-            </h1>
             <button
               onClick={() => setShowEditor(false)}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-2xl font-grotesk font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hover:opacity-80 transition-opacity"
             >
-              ← Back
+              CosmosPort
             </button>
+            <div className="flex items-center gap-4">
+              {user && (
+                <span className="text-sm text-muted-foreground">
+                  {user.displayName || user.email}
+                </span>
+              )}
+              <button
+                onClick={() => setShowEditor(false)}
+                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+              >
+                ← Back
+              </button>
+            </div>
           </div>
         </header>
 
