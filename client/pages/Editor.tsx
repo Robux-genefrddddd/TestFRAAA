@@ -67,7 +67,7 @@ export default function Editor() {
     username: user?.displayName || "creator",
     sections: [
       {
-        id: Math.random().toString(36),
+        id: `hero-${Date.now()}`,
         ...SECTION_TEMPLATES.hero,
       } as Section,
     ],
