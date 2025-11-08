@@ -27,7 +27,7 @@ export default function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/build" element={<Editor />} />
               {/* Portfolio published pages */}
-              <Route path="/@:username" element={<Index />} />
+              <Route path="/@:username" element={<Portfolio />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
