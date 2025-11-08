@@ -65,7 +65,12 @@ export default function Editor() {
     title: "My Portfolio",
     description: "Welcome to my creative universe",
     username: user?.displayName || "creator",
-    sections: [SECTION_TEMPLATES.hero as Section & { id: string }],
+    sections: [
+      {
+        id: Math.random().toString(36),
+        ...SECTION_TEMPLATES.hero,
+      } as Section,
+    ],
     theme: {
       primaryColor: "#6FC3DF",
       backgroundColor: "#0A0A0A",
