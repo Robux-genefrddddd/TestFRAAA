@@ -81,8 +81,45 @@ export default function Editor() {
       navigate("/login");
     } else {
       loadPortfolio();
+      loadPresetTheme();
     }
   }, [user, navigate]);
+
+  const loadPresetTheme = () => {
+    const presetId = localStorage.getItem("cosmosport-preset");
+    if (presetId) {
+      const presetThemes: Record<string, any> = {
+        "dev-builder": {
+          primaryColor: "#6FC3DF",
+          backgroundColor: "#0A0A0A",
+          fontFamily: "Space Grotesk",
+        },
+        "artist-light": {
+          primaryColor: "#FF8CBA",
+          backgroundColor: "#F9F9FB",
+          fontFamily: "Poppins",
+        },
+        "minimal-pro": {
+          primaryColor: "#6FC3DF",
+          backgroundColor: "#FFFFFF",
+          fontFamily: "Inter",
+        },
+        "showcase-classic": {
+          primaryColor: "#C0A7FF",
+          backgroundColor: "#0A0A0A",
+          fontFamily: "Space Grotesk",
+        },
+      };
+
+      if (presetThemes[presetId]) {
+        setPortfolio((prev) => ({
+          ...prev,
+          theme: presetThemes[presetId],
+        }));
+      }
+      localStorage.removeItem("cosmosport-preset");
+    }
+  };
 
   useEffect(() => {
     const timer = setTimeout(savePortfolio, 2000);
