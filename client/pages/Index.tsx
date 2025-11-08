@@ -57,13 +57,27 @@ const PRESETS: Preset[] = [
 ];
 
 export default function Index() {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
   const [selectedPreset, setSelectedPreset] = useState<string | null>(null);
   const [showEditor, setShowEditor] = useState(false);
 
   const handleStartCreating = (presetId: string) => {
     setSelectedPreset(presetId);
     setShowEditor(true);
-    // In a real app, this would navigate to /build with preset state
+  };
+
+  const handleBeginButton = () => {
+    if (user) {
+      navigate("/build");
+    } else {
+      navigate("/register");
+    }
+  };
+
+  const handleLogout = async () => {
+    await logout();
+    setShowEditor(false);
   };
 
   if (showEditor) {
