@@ -138,14 +138,62 @@ export default function Index() {
       {/* Main Content with relative positioning to sit above starfield */}
       <div className="relative z-10">
         {/* Header */}
-        <header className="border-b border-white/10 backdrop-blur-sm">
+        <header className="border-b border-white/10 backdrop-blur-sm sticky top-0 z-40">
           <div className="container mx-auto px-4 py-4 flex items-center justify-between">
             <h1 className="text-2xl font-grotesk font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               CosmosPort
             </h1>
-            <p className="text-xs text-muted-foreground uppercase tracking-widest">
-              Create • Customize • Publish
-            </p>
+            <div className="flex items-center gap-6">
+              <p className="text-xs text-muted-foreground uppercase tracking-widest">
+                Create • Customize • Publish
+              </p>
+              <div className="flex items-center gap-3">
+                {user ? (
+                  <>
+                    <span className="text-sm text-muted-foreground">
+                      {user.displayName || user.email}
+                    </span>
+                    <button
+                      onClick={handleLogout}
+                      className={cn(
+                        "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium",
+                        "border border-white/15 hover:border-white/30",
+                        "bg-white/5 hover:bg-white/10",
+                        "transition-all"
+                      )}
+                    >
+                      <LogOut className="w-4 h-4" />
+                      Logout
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      to="/login"
+                      className={cn(
+                        "px-4 py-2 rounded-lg text-sm font-medium",
+                        "text-muted-foreground hover:text-foreground",
+                        "transition-colors"
+                      )}
+                    >
+                      Sign In
+                    </Link>
+                    <Link
+                      to="/register"
+                      className={cn(
+                        "px-4 py-2 rounded-lg text-sm font-medium",
+                        "border border-white/15 hover:border-white/30",
+                        "bg-gradient-to-r from-primary/10 to-secondary/10",
+                        "hover:from-primary/20 hover:to-secondary/20",
+                        "transition-all"
+                      )}
+                    >
+                      Sign Up
+                    </Link>
+                  </>
+                )}
+              </div>
+            </div>
           </div>
         </header>
 
