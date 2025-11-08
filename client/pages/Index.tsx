@@ -59,7 +59,6 @@ const PRESETS: Preset[] = [
 export default function Index() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
-  const [selectedPreset, setSelectedPreset] = useState<string | null>(null);
   const [showEditor, setShowEditor] = useState(false);
 
   const handleStartCreating = (presetId: string) => {
@@ -253,25 +252,18 @@ export default function Index() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {PRESETS.map((preset) => (
-              <div
+              <button
                 key={preset.id}
                 onClick={() => handleStartCreating(preset.id)}
                 className={cn(
-                  "p-6 rounded-xl border transition-all duration-300 cursor-pointer",
+                  "p-6 rounded-xl border transition-all duration-300 cursor-pointer text-left w-full",
                   "hover:border-white/30 hover:bg-white/5",
                   "group",
-                  selectedPreset === preset.id
-                    ? "border-primary bg-primary/10"
-                    : "border-white/10 bg-white/[0.02]"
+                  "border-white/10 bg-white/[0.02]"
                 )}
               >
                 <div className="flex items-start justify-between mb-4">
-                  <div className={cn(
-                    "p-3 rounded-lg transition-colors",
-                    selectedPreset === preset.id
-                      ? "bg-primary/20 text-primary"
-                      : "bg-white/10 text-muted-foreground group-hover:bg-white/15"
-                  )}>
+                  <div className="p-3 rounded-lg transition-colors bg-white/10 text-muted-foreground group-hover:bg-white/15">
                     {preset.icon}
                   </div>
                   <span className="text-xs text-muted-foreground uppercase tracking-widest">
@@ -296,7 +288,7 @@ export default function Index() {
                     Personnalise →
                   </span>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </section>
